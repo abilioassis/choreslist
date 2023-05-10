@@ -20,16 +20,20 @@
   <body>
     <div class="container">
       <h1>Choreslist</h1>
+      <p id="msg"></p>
       <div class="controls">
-        <input class="input-chore" type="text" placeholder="Do dishes" />
-        <button class="btn btn-primary" type="button">-></button>
-        <button class="btn btn-secondary" type="button">✕</button>
+        <input
+          id="chore-input"
+          class="chore-input"
+          type="text"
+          placeholder="Do dishes"
+        />
+        <button id="chore-add" class="btn btn-primary" type="button">-></button>
+        <button id="chore-remove-all" class="btn btn-secondary" type="button">
+          ✕
+        </button>
       </div>
-      <div class="choreslist">
-        <div class="chore">Do dishes</div>
-        <div class="chore">Clean kitchen</div>
-        <div class="chore">Do laundry</div>
-      </div>
+      <div id="chores-list" class="chores-list"></div>
     </div>
     <script src="js/index.js"></script>
   </body>
