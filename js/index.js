@@ -44,8 +44,7 @@ function choreAdd() {
     } else {
       // chore doesn't exists in localStorage
       updateUI("warning", "");
-      //
-      localStorage.setItem(choreInput.trim().toLowerCase(), choreInput);
+      localStorage.setItem(choreInput, choreInput);
       updateUI("chore", choreInput);
     }
   }
@@ -53,7 +52,7 @@ function choreAdd() {
 
 function choreRemoveAll() {
   localStorage.clear();
-  updateUI("clear", "");
+  updateUI("clear");
 }
 
 function updateUI(strType, str) {
@@ -63,10 +62,11 @@ function updateUI(strType, str) {
 
   if (strType === "warning") {
     msgEl.innerText = str;
-  } else if (strType === "chore") {
+  } else if (strType === "clear") {
+    choreInputEl.value = "";
+    choreListEl.innerHTML = "";
+  } else {
     choreInputEl.value = "";
     choreListEl.innerHTML += `<div class="chore">${str}</div>`;
-  } else if (strType === "clear") {
-    choreListEl.innerHTML = str;
   }
 }
