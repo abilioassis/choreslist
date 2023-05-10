@@ -43,7 +43,6 @@ function choreAdd() {
       updateUI("warning", "This task already exists.");
     } else {
       // chore doesn't exists in localStorage
-      updateUI("warning", "");
       localStorage.setItem(choreInput, choreInput);
       updateUI("chore", choreInput);
     }
@@ -63,9 +62,11 @@ function updateUI(strType, str) {
   if (strType === "warning") {
     msgEl.innerText = str;
   } else if (strType === "clear") {
+    msgEl.innerText = "";
     choreInputEl.value = "";
     choreListEl.innerHTML = "";
   } else {
+    msgEl.innerText = "";
     choreInputEl.value = "";
     choreListEl.innerHTML += `<div class="chore">${str}</div>`;
   }
