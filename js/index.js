@@ -32,7 +32,10 @@ function initializeApp() {
 }
 
 function choreAdd() {
-  const choreInput = document.getElementById("chore-input").value.toLowerCase();
+  const choreInput = document
+    .getElementById("chore-input")
+    .value.trim()
+    .toLowerCase();
 
   if (choreInput !== "") {
     if (localStorage.getItem(choreInput) !== null) {
@@ -41,7 +44,8 @@ function choreAdd() {
     } else {
       // chore doesn't exists in localStorage
       updateUI("warning", "");
-      localStorage.setItem(choreInput.toLowerCase(), choreInput);
+      //
+      localStorage.setItem(choreInput.trim().toLowerCase(), choreInput);
       updateUI("chore", choreInput);
     }
   }
