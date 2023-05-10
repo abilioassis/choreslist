@@ -13,6 +13,14 @@ document
     choreRemoveAll();
   });
 
+document
+  .getElementById("chore-input")
+  .addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      choreAdd();
+    }
+  });
+
 initializeApp();
 
 function initializeApp() {
@@ -24,7 +32,7 @@ function initializeApp() {
 }
 
 function choreAdd() {
-  const choreInput = document.getElementById("chore-input").value;
+  const choreInput = document.getElementById("chore-input").value.toLowerCase();
 
   if (choreInput !== "") {
     if (localStorage.getItem(choreInput) !== null) {
@@ -32,9 +40,8 @@ function choreAdd() {
       updateUI("warning", "This task already exists.");
     } else {
       // chore doesn't exists in localStorage
-      // const key = Date.now().toString();
       updateUI("warning", "");
-      localStorage.setItem(choreInput, choreInput);
+      localStorage.setItem(choreInput.toLowerCase(), choreInput);
       updateUI("chore", choreInput);
     }
   }
