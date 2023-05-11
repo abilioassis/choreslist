@@ -61,6 +61,7 @@ input {
   border: none;
   border-radius: 5px;
   min-width: 3rem;
+  font-weight: bolder;
 }
 
 .btn-primary {
@@ -81,6 +82,7 @@ input {
   line-height: 3;
   background: #ffcc68;
   border-radius: 5px;
+  font-weight: bolder;
 }
 
 /* Tablets and Desktops */

@@ -8,7 +8,7 @@ This is a solution to the [M3 - Choreslist](https://scrimba.com/scrim/co3004026a
 
 ## Links
 
-- Live Site: [Netlify]()
+- Live Site: [Netlify](https://clever-pasca-55cec6.netlify.app)
 - Codebase: [Github](https://github.com/abilioassis/choreslist)
 - Code review: [Scrimba]()
 
