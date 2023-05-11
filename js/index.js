@@ -45,15 +45,16 @@ document
  */
 function newChore() {
   const choreEl = document.getElementById("chore-input");
-  const choreTxt = choreEl.value.trim().toLowerCase();
+  const choreTxt = choreEl.value.trim();
+  const choreTxtKey = choreTxt.toLowerCase();
 
   if (choreTxt !== "") {
-    if (localStorage.getItem(choreTxt) !== null) {
+    if (localStorage.getItem(choreTxtKey) !== null) {
       // chore exists in database
       updateUI("warning");
     } else {
       // chore doesn't exists in database
-      localStorage.setItem(choreTxt, choreTxt);
+      localStorage.setItem(choreTxtKey, choreTxt);
       updateUI("newChore", choreTxt);
     }
   }
