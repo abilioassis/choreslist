@@ -83,6 +83,8 @@ input {
   background: #ffcc68;
   border-radius: 5px;
   font-weight: bolder;
+  word-wrap: break-word;
+  padding: 0 0.5rem;
 }
 
 /* Tablets and Desktops */
